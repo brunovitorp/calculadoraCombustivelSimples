@@ -1,0 +1,19 @@
+#pai {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #valor, #valor2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  #btn-s {
+    margin-top: 10px;
+  }
+  
