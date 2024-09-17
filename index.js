@@ -1,10 +1,16 @@
 "use strict";
 const botao = document.getElementById("btn");
 botao.addEventListener("click", () => {
-    const alcool = parseFloat(document.getElementById("alcool").value);
-    const gasolina = parseFloat(document.getElementById("gasolina").value);
-    const razao = alcool / gasolina;
+    const entradaAlcool = document.getElementById("alcool");
+    const entradaGasolina = document.getElementById("gasolina");
+    const alcool = parseFloat(entradaAlcool.value);
+    const gasolina = parseFloat(entradaGasolina.value);
+    if (isNaN(alcool) || isNaN(gasolina) || alcool <= 0 || gasolina <= 0) {
+        alert("Por favor, insira valores numéricos válidos maiores que zero.");
+        return;
+    }
     let resultado;
+    const razao = alcool / gasolina;
     if (razao <= 0.7) {
         resultado = "Abasteça com álcool";
         alert("Abasteça com álcool");
@@ -13,6 +19,6 @@ botao.addEventListener("click", () => {
         resultado = "Abasteça com gasolina";
         alert("Abasteça com gasolina");
     }
-    const resultadoElement = document.getElementById("resultado");
-    resultadoElement.textContent = resultado;
+    const resultadoDiv = document.getElementById("resultado");
+    resultadoDiv.textContent = resultado;
 });
